@@ -539,7 +539,7 @@ public class MqClient {
 				request.setClientIp(mqContext.getConfig().getIp());
 				request.setToken(token);
 				request.setTopicName(topic);
-				request.setMsgs(messages);
+				request.setMsgs(new ArrayList<>(messages));
 				request.setSynFlag(0);
 				boolean rs = msgsAsyn.offer(request);
 				if(!rs) {

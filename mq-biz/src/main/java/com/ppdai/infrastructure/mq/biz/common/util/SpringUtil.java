@@ -1,9 +1,14 @@
 package com.ppdai.infrastructure.mq.biz.common.util;
 
+
 import org.springframework.aop.TargetSource;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.core.Ordered;
+import org.springframework.core.PriorityOrdered;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
@@ -12,7 +17,7 @@ import java.lang.reflect.Method;
 import java.util.Map;
 
 @Component
-public class SpringUtil implements ApplicationContextAware {
+public class SpringUtil  implements BeanFactoryPostProcessor, PriorityOrdered, ApplicationContextAware {
 
 	private static ApplicationContext applicationContext;
 
@@ -78,6 +83,19 @@ public class SpringUtil implements ApplicationContextAware {
 		return null;
 
 	}
+
+	@Override
+	public int getOrder() {
+		// TODO Auto-generated method stub
+		return Ordered.HIGHEST_PRECEDENCE;
+	}
+
+	@Override
+	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+		// TODO Auto-generated method stub
+
+	}
+
 
 	public static Object getValue(String beanName, String fieldName) {
 		Object object = getBean(beanName);

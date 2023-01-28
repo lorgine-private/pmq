@@ -1145,7 +1145,9 @@ public class ConsumerServiceImpl extends AbstractBaseService<ConsumerEntity> imp
     public boolean isActive(long id){
         ConsumerEntity temp=idEntityMap.get().get(id);
         if(temp==null){
-            return false;
+            if(consumerRepository.getById(id)==null){
+              return false;
+            }
         }
         return true;
     }

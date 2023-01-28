@@ -30,7 +30,7 @@ CREATE TABLE `message_01` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_02
@@ -47,7 +47,7 @@ CREATE TABLE `message_02` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_03
@@ -65,7 +65,7 @@ CREATE TABLE `message_03` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_04
@@ -83,7 +83,7 @@ CREATE TABLE `message_04` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_05
@@ -101,7 +101,7 @@ CREATE TABLE `message_05` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_06
@@ -119,7 +119,7 @@ CREATE TABLE `message_06` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_07
@@ -137,7 +137,7 @@ CREATE TABLE `message_07` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_08
@@ -155,7 +155,7 @@ CREATE TABLE `message_08` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_09
@@ -173,7 +173,7 @@ CREATE TABLE `message_09` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_10
@@ -191,7 +191,7 @@ CREATE TABLE `message_10` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_11
@@ -209,7 +209,7 @@ CREATE TABLE `message_11` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_12
@@ -227,7 +227,7 @@ CREATE TABLE `message_12` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_13
@@ -245,7 +245,7 @@ CREATE TABLE `message_13` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_14
@@ -263,7 +263,7 @@ CREATE TABLE `message_14` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_15
@@ -281,7 +281,7 @@ CREATE TABLE `message_15` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_16
@@ -299,7 +299,7 @@ CREATE TABLE `message_16` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_17
@@ -317,7 +317,7 @@ CREATE TABLE `message_17` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_18
@@ -335,7 +335,7 @@ CREATE TABLE `message_18` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_19
@@ -353,7 +353,7 @@ CREATE TABLE `message_19` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_20
@@ -371,7 +371,7 @@ CREATE TABLE `message_20` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_21
@@ -389,7 +389,7 @@ CREATE TABLE `message_21` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_22
@@ -407,7 +407,7 @@ CREATE TABLE `message_22` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_23
@@ -425,7 +425,7 @@ CREATE TABLE `message_23` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_24
@@ -443,7 +443,7 @@ CREATE TABLE `message_24` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_25
@@ -461,7 +461,7 @@ CREATE TABLE `message_25` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_26
@@ -479,7 +479,7 @@ CREATE TABLE `message_26` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_27
@@ -497,7 +497,7 @@ CREATE TABLE `message_27` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_28
@@ -515,7 +515,7 @@ CREATE TABLE `message_28` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_29
@@ -533,7 +533,7 @@ CREATE TABLE `message_29` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_30
@@ -551,7 +551,7 @@ CREATE TABLE `message_30` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_31
@@ -569,7 +569,7 @@ CREATE TABLE `message_31` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_32
@@ -587,7 +587,7 @@ CREATE TABLE `message_32` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_33
@@ -605,7 +605,7 @@ CREATE TABLE `message_33` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_34
@@ -623,7 +623,7 @@ CREATE TABLE `message_34` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_35
@@ -641,7 +641,7 @@ CREATE TABLE `message_35` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_36
@@ -659,7 +659,7 @@ CREATE TABLE `message_36` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_37
@@ -677,7 +677,7 @@ CREATE TABLE `message_37` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_38
@@ -695,7 +695,7 @@ CREATE TABLE `message_38` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_39
@@ -713,7 +713,7 @@ CREATE TABLE `message_39` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_40
@@ -731,7 +731,7 @@ CREATE TABLE `message_40` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_41
@@ -749,7 +749,7 @@ CREATE TABLE `message_41` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_42
@@ -767,7 +767,7 @@ CREATE TABLE `message_42` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_43
@@ -785,7 +785,7 @@ CREATE TABLE `message_43` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_44
@@ -803,7 +803,7 @@ CREATE TABLE `message_44` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_45
@@ -821,7 +821,7 @@ CREATE TABLE `message_45` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_46
@@ -839,7 +839,7 @@ CREATE TABLE `message_46` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_47
@@ -857,7 +857,7 @@ CREATE TABLE `message_47` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_48
@@ -875,7 +875,7 @@ CREATE TABLE `message_48` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_49
@@ -893,7 +893,7 @@ CREATE TABLE `message_49` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_50
@@ -911,7 +911,7 @@ CREATE TABLE `message_50` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_51
@@ -929,7 +929,7 @@ CREATE TABLE `message_51` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_52
@@ -947,7 +947,7 @@ CREATE TABLE `message_52` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_53
@@ -965,7 +965,7 @@ CREATE TABLE `message_53` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_54
@@ -983,7 +983,7 @@ CREATE TABLE `message_54` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_55
@@ -1001,7 +1001,7 @@ CREATE TABLE `message_55` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_56
@@ -1019,7 +1019,7 @@ CREATE TABLE `message_56` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_57
@@ -1037,7 +1037,7 @@ CREATE TABLE `message_57` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_58
@@ -1055,7 +1055,7 @@ CREATE TABLE `message_58` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_59
@@ -1073,7 +1073,7 @@ CREATE TABLE `message_59` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_60
@@ -1091,7 +1091,7 @@ CREATE TABLE `message_60` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_61
@@ -1109,7 +1109,7 @@ CREATE TABLE `message_61` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_62
@@ -1127,7 +1127,7 @@ CREATE TABLE `message_62` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_63
@@ -1145,7 +1145,7 @@ CREATE TABLE `message_63` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_64
@@ -1163,7 +1163,7 @@ CREATE TABLE `message_64` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_65
@@ -1181,7 +1181,7 @@ CREATE TABLE `message_65` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_66
@@ -1199,7 +1199,7 @@ CREATE TABLE `message_66` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_67
@@ -1217,7 +1217,7 @@ CREATE TABLE `message_67` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_68
@@ -1235,7 +1235,7 @@ CREATE TABLE `message_68` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_69
@@ -1253,7 +1253,7 @@ CREATE TABLE `message_69` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_70
@@ -1271,7 +1271,7 @@ CREATE TABLE `message_70` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_71
@@ -1289,7 +1289,7 @@ CREATE TABLE `message_71` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_72
@@ -1307,7 +1307,7 @@ CREATE TABLE `message_72` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_73
@@ -1325,7 +1325,7 @@ CREATE TABLE `message_73` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_74
@@ -1343,7 +1343,7 @@ CREATE TABLE `message_74` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_75
@@ -1361,7 +1361,7 @@ CREATE TABLE `message_75` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_76
@@ -1379,7 +1379,7 @@ CREATE TABLE `message_76` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_77
@@ -1397,7 +1397,7 @@ CREATE TABLE `message_77` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_78
@@ -1415,7 +1415,7 @@ CREATE TABLE `message_78` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_79
@@ -1433,7 +1433,7 @@ CREATE TABLE `message_79` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_80
@@ -1451,7 +1451,7 @@ CREATE TABLE `message_80` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_81
@@ -1469,7 +1469,7 @@ CREATE TABLE `message_81` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_82
@@ -1487,7 +1487,7 @@ CREATE TABLE `message_82` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_83
@@ -1505,7 +1505,7 @@ CREATE TABLE `message_83` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_84
@@ -1523,7 +1523,7 @@ CREATE TABLE `message_84` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_85
@@ -1541,7 +1541,7 @@ CREATE TABLE `message_85` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_86
@@ -1559,7 +1559,7 @@ CREATE TABLE `message_86` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_87
@@ -1577,7 +1577,7 @@ CREATE TABLE `message_87` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_88
@@ -1595,7 +1595,7 @@ CREATE TABLE `message_88` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_89
@@ -1613,7 +1613,7 @@ CREATE TABLE `message_89` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_90
@@ -1631,7 +1631,7 @@ CREATE TABLE `message_90` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_91
@@ -1649,7 +1649,7 @@ CREATE TABLE `message_91` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_92
@@ -1667,7 +1667,7 @@ CREATE TABLE `message_92` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_93
@@ -1685,7 +1685,7 @@ CREATE TABLE `message_93` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_94
@@ -1703,7 +1703,7 @@ CREATE TABLE `message_94` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_95
@@ -1721,7 +1721,7 @@ CREATE TABLE `message_95` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_96
@@ -1739,7 +1739,7 @@ CREATE TABLE `message_96` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_97
@@ -1757,7 +1757,7 @@ CREATE TABLE `message_97` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_98
@@ -1775,7 +1775,7 @@ CREATE TABLE `message_98` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for message_99
@@ -1793,4 +1793,4 @@ CREATE TABLE `message_99` (
   `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
