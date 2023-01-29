@@ -206,9 +206,10 @@ public class MqClient {
 	}
 
 	private static AtomicBoolean restartFlag = new AtomicBoolean(false);
+	private static Long lastRestart = System.currentTimeMillis();
 
 	public static void reStart() {
-		if (restartFlag.compareAndSet(false, true)) {
+		if (restartFlag.compareAndSet(false, true)|| (System.currentTimeMillis()-lastRestart)>60_000) {
 			executor.submit(new Runnable() {
 				public void run() {
 					try {
@@ -241,6 +242,7 @@ public class MqClient {
 						log.error("restart_error", e);
 					} finally {
 						restartFlag.set(false);
+						lastRestart = System.currentTimeMillis();
 					}
 				}
 			});

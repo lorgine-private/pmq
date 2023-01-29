@@ -175,7 +175,7 @@
 		select
 		table_schema,table_name,auto_increment,table_rows ,round(data_length/1024/1024/1024,2) as dataSize from
 		information_schema.tables
-		where table_type='BASE TABLE'
+		where table_type='BASE TABLE' and table_name like 'message_%'
 	</select>
 	<!-- <select id="getMaxIdByTb" resultType="java.lang.Long" useCache="false"> -->
 	<!-- select max(id) from ${tbName} -->
