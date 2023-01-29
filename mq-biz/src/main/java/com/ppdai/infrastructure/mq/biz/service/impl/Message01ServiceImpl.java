@@ -267,6 +267,7 @@ public class Message01ServiceImpl implements Message01Service {
                 // dbId.get());
                 return map;
             }
+            message01Repository.updateSessionPar();
             List<TableInfoEntity> dataLst = message01Repository.getMaxIdByDb();
             Map<String, Map<String, TableInfoEntity>> finalDbMap = dbMap;
             dataLst.forEach(t1 -> {

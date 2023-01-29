@@ -41,6 +41,7 @@ public interface Message01Repository extends BaseRepository<Message01Entity> {
 
 	List<TableInfoEntity> getMaxIdByDb();
 
+	void updateSessionPar();
 	void truncate(@Param("tbName") String tbName);
 
 	void createMessageTable(@Param("tbName") String tbName);

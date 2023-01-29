@@ -177,6 +177,9 @@
 		information_schema.tables
 		where table_type='BASE TABLE' and table_name like 'message_%'
 	</select>
+	<update id="updateSessionPar">
+		SET SESSION information_schema_stats_expiry=0
+	</update>
 	<!-- <select id="getMaxIdByTb" resultType="java.lang.Long" useCache="false"> -->
 	<!-- select max(id) from ${tbName} -->
 	<!-- </select> -->
