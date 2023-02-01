@@ -145,7 +145,7 @@ public class UiMessageService {
 				}
 				if(messageVo.getType()==2){
 					//如果是失败topic,设置消息的重试状态
-					if(messageVo.getRetryCount()>Message01Service.failMsgRetryCountSuc){
+					if(messageVo.getRetryCount()>=Message01Service.failMsgRetryCountSuc){
 						messageVo.setFailMsgRetryStatus("重试成功");
 						messageVo.setRetryCount(messageVo.getRetryCount()-Message01Service.failMsgRetryCountSuc);
 					}else{

@@ -869,7 +869,9 @@ public class MqQueueExcutorService implements IMqQueueExcutorService {
             String failTopicName = TopicUtil.getFailTopicName(this.consumerGroupName, temp.getOriginTopicName());
             List<MessageDto> messageDtos1 = new ArrayList<>(messageDtos.size());
             messageDtos.forEach(messageDto -> {
-                messageDto.setRetryCount(messageDto.getRetryCount() + 1);
+                if(!temp.getTopicName().equalsIgnoreCase(temp.getOriginTopicName())){
+                    messageDto.setRetryCount(messageDto.getRetryCount() + 1);
+                }
                 if (temp.getRetryCount() >= messageDto.getRetryCount()) {
                     MqClient.checkBody(messageDto);
                     messageDtos1.add(messageDto);

@@ -445,7 +445,7 @@ public class MqResource implements IMqResource {
 	protected <T> T post(Object request, String path, int tryCount, Class<T> class1, boolean isImportant) {
 		T response = null;
 		int count = 0;
-		Exception last = null;
+		Throwable last = null;
 		String url = null;
 		while (response == null && count < tryCount) {
 			String host = getHost(isImportant);
@@ -453,19 +453,13 @@ public class MqResource implements IMqResource {
 			try {
 				response = httpClient.post(url, request, class1);
 				last = null;
-			} catch (IOException e) {
+			} catch (Throwable e) {
 				if (!(url.indexOf(MqConstanst.CONSUMERPRE + "/heartbeat") != -1
 						|| url.indexOf(MqConstanst.CONSUMERPRE + "/getMetaGroup") != -1)) {
 					logger.error("访问" + url + "异常,access_error", e);
 				}
 				addErrorCat(e, request, count, tryCount);
 				last = e;
-			} catch (BrokerException e) {
-				last = e;
-				addErrorCat(e, request, count, tryCount);
-			} catch (Exception e) {
-				last = e;
-				addErrorCat(e, request, count, tryCount);
 			} finally {
 				if (response != null) {
 					if (isImportant) {
@@ -510,7 +504,7 @@ public class MqResource implements IMqResource {
 		}
 		return response;
 	}
-	private void addErrorCat(Exception e, Object request, int count, int tryCount) {
+	private void addErrorCat(Throwable e, Object request, int count, int tryCount) {
 		try {
 			if (request instanceof PublishMessageRequest && count < tryCount) {
 				CatRequest request2 = new CatRequest();
