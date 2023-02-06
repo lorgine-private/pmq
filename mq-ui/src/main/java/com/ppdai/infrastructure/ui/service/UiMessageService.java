@@ -68,12 +68,12 @@ public class UiMessageService {
 		if (count == 0) {
 			return new MessageGetListResponse(count, null);
 		}
-		message01Service.setDbId(queueEntity.getDbNodeId());
 		TopicEntity topicEntity = topicService.get(queueEntity.getTopicId());
 		List<Message01Entity> message01EntityList=new ArrayList<>();
 
 		if(topicEntity.getTopicType()==1){
 			if(messageGetListRequest.getId()!=0L){
+				message01Service.setDbId(queueEntity.getDbNodeId());
 				Message01Entity message = message01Service.getMessageById(queueEntity.getTbName(), messageGetListRequest.getId());
 				message01EntityList.add(message);
 			}
@@ -85,6 +85,7 @@ public class UiMessageService {
 				if (start1 < minId) {
 					start1 = minId;
 				}
+				message01Service.setDbId(queueEntity.getDbNodeId());
 				message01EntityList = message01Service.getListDy(queueEntity.getTopicName(),queueEntity.getTbName(), start1, end1);
 			}
 			//条件筛选查询,不分页
@@ -98,7 +99,7 @@ public class UiMessageService {
 				parameterMap.put("offset1",pageSize);
 				parameterMap.put("maxId",maxId);
 				parameterMap.put("minId",minId);
-
+				message01Service.setDbId(queueEntity.getDbNodeId());
 				message01EntityList = message01Service.getListByPage(parameterMap);
 
 				message01Service.setDbId(queueEntity.getDbNodeId());
@@ -121,6 +122,7 @@ public class UiMessageService {
 				parameterMap.put("retryStatus",Integer.parseInt(messageGetListRequest.getRetryStatus()));
 				parameterMap.put("failMsgRetryCountSuc",Message01Service.failMsgRetryCountSuc);
 			}
+			message01Service.setDbId(queueEntity.getDbNodeId());
 			message01EntityList = message01Service.getListByPage(parameterMap);
 
 			message01Service.setDbId(queueEntity.getDbNodeId());
@@ -223,10 +225,11 @@ public class UiMessageService {
 	private long getMaxId(Message01Service message01Service, QueueEntity queueEntity,
 			MessageConditionRequest messageConditionRequest) {
 		long maxId = 1;
-		message01Service.setDbId(queueEntity.getDbNodeId());
 		if (StringUtils.isEmpty(messageConditionRequest.getEndTime())) {
+			message01Service.setDbId(queueEntity.getDbNodeId());
 			maxId = message01Service.getMaxId(queueEntity.getTbName());
 		} else {
+			message01Service.setDbId(queueEntity.getDbNodeId());
 			List<Message01Entity> list = message01Service.getListByTime(queueEntity.getTbName(),
 					messageConditionRequest.getEndTime());
 			if (!CollectionUtils.isEmpty(list)) {

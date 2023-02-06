@@ -218,12 +218,7 @@
 	       delete from ${tbName} where id=#{id} and retry_count=${retryCount}
 	      ]]>
 	</delete>
-	<select id="getNearByMessageById" resultMap="BaseResultMap"
-		useCache="false">
-		select *
-		from ${tbName} where id > ${id} order by id asc limit
-		1
-	</select>
+
 	<select id="getMaxConnectionsCount" resultType="java.util.Map">
 		show variables
 		like 'max_connections'

@@ -518,12 +518,12 @@ public class QueueServiceImpl extends AbstractBaseService<QueueEntity>
 			data.entrySet().forEach(t1 -> {
 				queueMap.put(getKey(t1.getValue().getIp(), t1.getValue().getDbName(), t1.getValue().getTbName()),
 						t1.getKey());
-				dbIpIdMap.put(t1.getValue().getIp(), t1.getValue().getDbNodeId());
+				dbIpIdMap.put(message01Service.getIpAndDbName( t1.getValue().getIp(),t1.getValue().getDbName()), t1.getValue().getDbNodeId());
 			});
 			// Map<Long, Long> maxMap = new HashMap<>(data.size());
 			dbIpIdMap.entrySet().forEach(t1 -> {
 				message01Service.setDbId(t1.getValue());
-				Map<String, Map<String, Long>> maxNode = message01Service.getMaxIdByIp(t1.getKey());
+				Map<String, Map<String, Long>> maxNode = message01Service.getMaxIdByIpAndDbName(t1.getKey());
 				maxNode.entrySet().forEach(t2 -> {
 					t2.getValue().entrySet().forEach(t3 -> {
 						String key = getKey(t1.getKey(), t2.getKey(), t3.getKey());
@@ -619,6 +619,9 @@ public class QueueServiceImpl extends AbstractBaseService<QueueEntity>
 
 	@Override
 	public long getMaxId(long queueId, String tbName) {
+		Map<Long, QueueEntity> queues = getAllQueueMap();
+		QueueEntity queueEntity=queues.get(queueId);
+		message01Service.setDbId(queueEntity.getDbNodeId());
 		long maxId = message01Service.getMaxId(tbName);
 		queueIdMaxIdMapRef.get().put(queueId, maxId);
 		return maxId;

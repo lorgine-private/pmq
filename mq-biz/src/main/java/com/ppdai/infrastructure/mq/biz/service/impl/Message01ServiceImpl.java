@@ -173,7 +173,11 @@ public class Message01ServiceImpl implements Message01Service {
     @Override
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED, value = "msgTransactionManager")
     public Long getTableMinId(String tbName) {
-        return message01Repository.getTableMinId(getDbName() + "." + tbName);
+        try {
+            return message01Repository.getTableMinId(getDbName() + "." + tbName);
+        }finally {
+            clearDbId();
+        }
     }
 
 
@@ -253,12 +257,12 @@ public class Message01ServiceImpl implements Message01Service {
      */
     @Override
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED, value = "msgTransactionManager")
-    public Map<String, Map<String, Long>> getMaxIdByIp(String ip) {
+    public Map<String, Map<String, Long>> getMaxIdByIpAndDbName(String ipDbName) {
         setMaster(true);
         Map<String, Map<String, Long>> map = new HashMap<>();
         //key:dbName,key:tbName,value:info
         Map<String, Map<String, TableInfoEntity>> dbMap = null;
-        if (!Util.isEmpty(ip)) {
+        if (!Util.isEmpty(ipDbName)) {
             dbMap = new HashMap<>(100000);
         }
         try {
@@ -274,7 +278,7 @@ public class Message01ServiceImpl implements Message01Service {
                 if (!map.containsKey(t1.getDbName())) {
                     map.put(t1.getDbName(), new HashMap<>());
                 }
-                if (!Util.isEmpty(ip)) {
+                if (!Util.isEmpty(ipDbName)) {
                     Map<String, TableInfoEntity> tbMap = new HashMap<>();
                     if (!finalDbMap.containsKey(t1.getDbName())) {
                         finalDbMap.put(t1.getDbName(), tbMap);
@@ -294,10 +298,15 @@ public class Message01ServiceImpl implements Message01Service {
         } finally {
             clearDbId();
         }
-        if (!Util.isEmpty(ip)) {
-            tbInfoRef.get().put(ip, dbMap);
+        if (!Util.isEmpty(ipDbName)) {
+            tbInfoRef.get().put(ipDbName, dbMap);
         }
         return map;
+    }
+
+    @Override
+    public String getIpAndDbName(String ip, String dbName) {
+        return ip + "_" + dbName;
     }
 
     /*
@@ -306,7 +315,7 @@ public class Message01ServiceImpl implements Message01Service {
     @Override
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED, value = "msgTransactionManager")
     public Map<String, Map<String, Long>> getMaxId() {
-        return getMaxIdByIp(null);
+        return getMaxIdByIpAndDbName(null);
     }
 
 
@@ -347,8 +356,12 @@ public class Message01ServiceImpl implements Message01Service {
 
     @Override
     public void createMessageTable(String tbName) {
-        setMaster(true);
-        message01Repository.createMessageTable(tbName);
+        try{
+         setMaster(true);
+         message01Repository.createMessageTable(tbName);
+        }finally {
+            clearDbId();
+        }
     }
 
     @Override
@@ -365,22 +378,6 @@ public class Message01ServiceImpl implements Message01Service {
             clearDbId();
         }
         return rs;
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED, value = "msgTransactionManager")
-    public Message01Entity getNearByMessageById(String tbName, long id) {
-        Message01Entity message01Entity = null;
-        setMaster(false);
-        try {
-            message01Entity = message01Repository.getNearByMessageById(getDbName() + "." + tbName, id);
-        } catch (Exception e) {
-            otherFailCounter.inc();
-            throw new RuntimeException(e);
-        } finally {
-            clearDbId();
-        }
-        return message01Entity;
     }
 
     @Override
@@ -491,12 +488,19 @@ public class Message01ServiceImpl implements Message01Service {
     @Override
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED, value = "msgTransactionManager")
     public TableInfoEntity getSingleTableInfoFromCache(QueueEntity queueEntity) {
-        Map<String, Map<String, Map<String, TableInfoEntity>>> tableInfoCache = getTableInfoCache();
-        if (tableInfoCache.containsKey(queueEntity.getIp()) && tableInfoCache.get(queueEntity.getIp()).containsKey(queueEntity.getDbName()) && tableInfoCache.get(queueEntity.getIp()).get(queueEntity.getDbName()).containsKey(queueEntity.getTbName())) {
-            TableInfoEntity tableInfoEntity = tableInfoCache.get(queueEntity.getIp()).get(queueEntity.getDbName()).get(queueEntity.getTbName());
-            return tableInfoEntity;
+        try {
+            Map<String, Map<String, Map<String, TableInfoEntity>>> tableInfoCache = getTableInfoCache();
+            String ipDbName=getIpAndDbName(queueEntity.getIp(),queueEntity.getDbName());
+            if (tableInfoCache.containsKey(ipDbName) &&
+                    tableInfoCache.get(ipDbName).containsKey(queueEntity.getDbName())
+                    && tableInfoCache.get(ipDbName).get(queueEntity.getDbName()).containsKey(queueEntity.getTbName())) {
+                TableInfoEntity tableInfoEntity = tableInfoCache.get(ipDbName).get(queueEntity.getDbName()).get(queueEntity.getTbName());
+                return tableInfoEntity;
+            }
+            return null;
+        } finally {
+            clearDbId();
         }
-        return null;
     }
 
     @Override

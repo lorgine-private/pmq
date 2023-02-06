@@ -947,10 +947,11 @@ public class ConsumerServiceImpl extends AbstractBaseService<ConsumerEntity> imp
                              PublishMessageResponse response, QueueEntity temp) {
         // Transaction transaction = Tracer.newTransaction("PubInner-" +
         // temp.getIp(), request.getTopicName());
-        message01Service.setDbId(temp.getDbNodeId());
+
         Transaction transaction = Tracer.newTransaction("Publish-Data", temp.getIp());
         try {
             transaction.addData("topic", request.getTopicName());
+            message01Service.setDbId(temp.getDbNodeId());
             message01Service.insertBatchDy(request.getTopicName(), temp.getTbName(), message01Entities);
             // 如果订阅该queue的组，开启了实时消息，则给对应的客户端发送异步通知
             if (soaConfig.getMqPushFlag() == 1) {// apollo开关
@@ -1220,10 +1221,10 @@ public class ConsumerServiceImpl extends AbstractBaseService<ConsumerEntity> imp
         List<Message01Entity> entities = new ArrayList<>();
         Transaction transaction = null;
         if (checkFailTime(request.getTopicName(), temp, null) && checkStatus(temp, dbNodeMap)) {
-            message01Service.setDbId(temp.getDbNodeId());
             transaction = Tracer.newTransaction("Pull-Data", temp.getIp());
             transaction.addData("arg-data", request.getConsumerGroupName() + "-" + request.getTopicName() + "-" + request.getQueueId() + "-" + request.getClientIp());
             try {
+                message01Service.setDbId(temp.getDbNodeId());
                 entities = message01Service.getListDy(temp.getTopicName(), temp.getTbName(), request.getOffsetStart(),
                         request.getOffsetEnd());
                 transaction.setStatus(Transaction.SUCCESS);

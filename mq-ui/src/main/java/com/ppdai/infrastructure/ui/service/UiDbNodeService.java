@@ -392,10 +392,10 @@ public class UiDbNodeService {
         if(dbNodeId == null || quantity == null){
             throw new CheckFailException("数据节点Id和创建表的数量都不能为null。");
         }
-        message01Service.setDbId(dbNodeId);
         for (int i = 1; i <= quantity; i++) {
             String suffix = String.format("%02d", i);
             String tableName = TABLE_NAME_PERFIX + suffix;
+            message01Service.setDbId(dbNodeId);
             message01Service.createMessageTable(tableName);
         }
         return new DbNodeCreateTableResponse();

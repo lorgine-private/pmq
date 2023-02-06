@@ -246,7 +246,8 @@
 		parameterType="com.ppdai.infrastructure.mq.biz.entity.QueueOffsetEntity">
 		update queue_offset set
 		consumer_name = #{consumerName},
-		consumer_id = #{consumerId},meta_update_time = current_timestamp
+		consumer_id = #{consumerId},meta_update_time = current_timestamp,
+		offset = #{offset}
 		where id = #{id}
 	</update>
 
@@ -258,7 +259,6 @@
 			where id = #{id} and offset_version=#{offsetVersion} and offset<#{offset}
 		  ]]>
 	</update>
-
 	<update id="commitOffsetAndUpdateVersion"
 			parameterType="com.ppdai.infrastructure.mq.biz.entity.QueueOffsetEntity">
 		<![CDATA[

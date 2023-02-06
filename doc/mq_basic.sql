@@ -128,30 +128,12 @@ CREATE TABLE `db_node` (
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_by` varchar(100) DEFAULT NULL COMMENT '操作人',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_active` tinyint(4) NOT NULL DEFAULT '1' COMMENT '逻辑删除',
-  `ip_01` varchar(45) DEFAULT NULL,
-  `port_01` smallint(11) DEFAULT NULL,
-  `ip_bak_01` varchar(45) DEFAULT NULL,
-  `port_bak_01` smallint(11) DEFAULT NULL,
-  `con_str_01` varchar(500) DEFAULT NULL COMMENT '数据库账户名-备份',
+  `is_active` tinyint(4) NOT NULL DEFAULT '1' COMMENT '逻辑删除'
   PRIMARY KEY (`id`),
   UNIQUE KEY `con_str_UNIQUE` (`con_str`),
   KEY `update_time_idx` (`update_time`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='数据库节点';
 
-CREATE TABLE `message_01` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `busi_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '业务id',
-  `head` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '消息头',
-  `body` text COLLATE utf8mb4_unicode_ci COMMENT '消息体',
-  `send_ip` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '发送的ip',
-  `send_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `inserttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `retry_count` int(11) DEFAULT '0',
-  `trace_id` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tag` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='消息';
 
 CREATE TABLE `mq_lock` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,

@@ -9,12 +9,8 @@ import com.ppdai.infrastructure.mq.biz.common.util.JsonUtil;
 import com.ppdai.infrastructure.mq.biz.common.util.Util;
 import com.ppdai.infrastructure.mq.biz.entity.Message01Entity;
 import com.ppdai.infrastructure.mq.biz.entity.QueueEntity;
-import com.ppdai.infrastructure.mq.biz.entity.TableInfoEntity;
 import com.ppdai.infrastructure.mq.biz.entity.TopicEntity;
-import com.ppdai.infrastructure.mq.biz.service.ConsumerGroupService;
-import com.ppdai.infrastructure.mq.biz.service.Message01Service;
-import com.ppdai.infrastructure.mq.biz.service.QueueService;
-import com.ppdai.infrastructure.mq.biz.service.TopicService;
+import com.ppdai.infrastructure.mq.biz.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +22,6 @@ import javax.annotation.PreDestroy;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
-
-/*
- * 历史消息定时清理
- */
 @Component
 public class MessageCleanService extends AbstractTimerService {
 	private Logger log = LoggerFactory.getLogger(MessageCleanService.class);
@@ -171,9 +163,6 @@ public class MessageCleanService extends AbstractTimerService {
 				&& !soaConfig.getClearTopics().contains(topic.topic.getName()))) {
 			return;
 		}
-		/*if(!"OfflineAdjustAmount".equalsIgnoreCase(topic.topic.getName())){
-			return;
-		}*/
 		String date1 = getNextDate(topic);
 		for (QueueEntity queueEntity : topic.queues) {
 			clearOneQueue(topic.topic, queueEntity, ip, date1);
@@ -194,19 +183,34 @@ public class MessageCleanService extends AbstractTimerService {
 		return Util.formateDate(date);
 	}
 
+	private long getTimeOutMaxId(QueueEntity queueEntity, String endTime) {
+		long maxId = 1;
+		message01Service.setDbId(queueEntity.getDbNodeId());
+		List<Message01Entity> list = message01Service.getListByTime(queueEntity.getTbName(),
+				endTime);
+		if (!CollectionUtils.isEmpty(list)) {
+			Message01Entity message01Entity = list.get(list.size() - 1);
+			maxId = message01Entity.getId();
+		}
+		return maxId;
+	}
+
 	private void clearOneQueue(TopicEntity topicEntity, QueueEntity queueEntity, String ip, String date) {
 		long lastMinId = 0;
-		long nextId = 0;
-		boolean flag=false;
-		int clearCount=0;
+		int clearCount = 0;
 		message01Service.setDbId(queueEntity.getDbNodeId());
-		Message01Entity message01Entity=message01Service.getMaxIdMsg(queueEntity.getTbName());
-		if(message01Entity==null){
+		Long minId = message01Service.getTableMinId(queueEntity.getTbName());
+		if (minId == null || minId == 0) {
 			return;
 		}
-		while (true && isMaster() && soaConfig.isEnbaleMessageClean()) {
+		Long maxId = getTimeOutMaxId(queueEntity, date);
+		while (isMaster() && soaConfig.isEnbaleMessageClean()) {
 			int size = soaConfig.getCleanBatchSize();
-			flag=false;
+			if (lastMinId + size <= maxId) {
+				lastMinId = lastMinId + size;
+			} else {
+				lastMinId = maxId;
+			}
 			topicEntity = topicService.getCache().get(topicEntity.getName());
 			if (topicEntity == null) {
 				break;
@@ -216,67 +220,29 @@ public class MessageCleanService extends AbstractTimerService {
 				// 说明队列分配发生了变化
 				break;
 			}
-			//Transaction transaction = Tracer.newTransaction("mq-msg", "clear-msg-" + topicEntity.getName());
+			long sleepTime = getSkipTime();
+			if (sleepTime != 0) {
+				log.info("当前时间在skip时间内，需要等待" + sleepTime + "ms");
+				Util.sleep(sleepTime);
+			}
 			Transaction transaction = Tracer.newTransaction("msg-clear", "clear-msg-" + topicEntity.getName());
 			try {
-				if (lastMinId == 0) {
-					TableInfoEntity tableInfoEntity = null;
-					message01Service.setDbId(queueEntity.getDbNodeId());
-					Long minId = message01Service.getTableMinId(queueEntity.getTbName());
-					if (minId == null || minId == 0) {
-						transaction.setStatus(Transaction.SUCCESS);
-						tableInfoEntity = message01Service.getSingleTableInfoFromCache(temp);
-						if (tableInfoEntity != null) {
-							lastMinId = tableInfoEntity.getMaxId() - tableInfoEntity.getTbRows() - 1;
-						}
-						break;
-					} else {
-						lastMinId = minId;
-						nextId = minId;
-					}
-					//此处代码是为了防止出现数据删除空洞的情况
-					if (tableInfoEntity == null) {
-						tableInfoEntity = message01Service.getSingleTableInfoFromCache(temp);
-					}
-					if (tableInfoEntity != null) {
-						if(tableInfoEntity.getTbRows()>size){
-							message01Service.setDbId(queueEntity.getDbNodeId());
-							nextId = message01Service.getNextId(queueEntity.getTbName(), minId, size);
-							flag=true;
-						}else{
-							nextId=nextId+size;
-							flag=true;
-						}
-					}
-				}
-				if(!flag){
-					nextId=nextId+size;
-				}
-				long sleepTime = getSkipTime();
-				if (sleepTime != 0) {
-					log.info("当前时间在skip时间内，需要等待" + sleepTime + "ms");
-					Util.sleep(sleepTime);
-				}
 				message01Service.setDbId(queueEntity.getDbNodeId());
-				int rows = message01Service.deleteDy(queueEntity.getTbName(), nextId, date, size,message01Entity.getId());
-				if (rows == 0) {
-					transaction.setStatus(Transaction.SUCCESS);
-					break;
-				} else {
+				int rows = message01Service.deleteDy(queueEntity.getTbName(), lastMinId, date, size, maxId);
+				if (rows > 0) {
 					counter.addAndGet(rows);
-					lastMinId = lastMinId + rows;
 					clearCount++;
-					log.info("删除topic:" + queueEntity.getTopicName() + "," + rows + "条！总清理"+counter+"条！");
+					log.info("删除topic:" + queueEntity.getTopicName() + "," + rows + "条！总清理" + counter + "条！");
 				}
 				if (!topicMap.containsKey(topicEntity.getName())) {
 					topicMap.put(topicEntity.getName(), new AtomicLong(0));
 				}
 				topicMap.get(topicEntity.getName()).addAndGet(rows);
-				if(clearCount>20){
+				if (clearCount > 20) {
 					if (queueEntity.getMinId() < lastMinId) {
-						queueService.updateMinId(queueEntity.getId(), lastMinId-1);
+						queueService.updateMinId(queueEntity.getId(), lastMinId - 1);
 					}
-					clearCount=0;
+					clearCount = 0;
 				}
 				transaction.setStatus(Transaction.SUCCESS);
 			} catch (Throwable e) {
@@ -286,12 +252,8 @@ public class MessageCleanService extends AbstractTimerService {
 			}
 			Util.sleep(soaConfig.getCleanSleepTime());
 		}
-		if (clearCount > 0) {
-			if (queueEntity.getMinId() < lastMinId) {
-				queueService.updateMinId(queueEntity.getId(), lastMinId-1);
-			}
-		} else if (queueEntity.getMinId() + 1 < lastMinId) {
-			queueService.updateMinId(queueEntity.getId(), lastMinId-1);
+		if (queueEntity.getMinId() < lastMinId) {
+			queueService.updateMinId(queueEntity.getId(), lastMinId - 1);
 		}
 	}
 

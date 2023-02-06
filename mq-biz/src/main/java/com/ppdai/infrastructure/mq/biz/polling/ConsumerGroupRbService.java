@@ -9,6 +9,8 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import com.ppdai.infrastructure.mq.biz.dto.Constants;
+import com.ppdai.infrastructure.mq.biz.entity.*;
+import com.ppdai.infrastructure.mq.biz.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +24,6 @@ import com.ppdai.infrastructure.mq.biz.common.util.IPUtil;
 import com.ppdai.infrastructure.mq.biz.common.util.JsonUtil;
 import com.ppdai.infrastructure.mq.biz.common.util.Util;
 import com.ppdai.infrastructure.mq.biz.dto.LogDto;
-import com.ppdai.infrastructure.mq.biz.entity.AuditLogEntity;
-import com.ppdai.infrastructure.mq.biz.entity.ConsumerGroupConsumerEntity;
-import com.ppdai.infrastructure.mq.biz.entity.ConsumerGroupEntity;
-import com.ppdai.infrastructure.mq.biz.entity.NotifyMessageStatEntity;
-import com.ppdai.infrastructure.mq.biz.entity.QueueOffsetEntity;
-import com.ppdai.infrastructure.mq.biz.service.AuditLogService;
-import com.ppdai.infrastructure.mq.biz.service.ConsumerGroupConsumerService;
-import com.ppdai.infrastructure.mq.biz.service.ConsumerGroupService;
-import com.ppdai.infrastructure.mq.biz.service.ConsumerService;
-import com.ppdai.infrastructure.mq.biz.service.LogService;
-import com.ppdai.infrastructure.mq.biz.service.NotifyMessageService;
-import com.ppdai.infrastructure.mq.biz.service.NotifyMessageStatService;
-import com.ppdai.infrastructure.mq.biz.service.QueueOffsetService;
 
 /*
  * 重平衡分配器
@@ -64,7 +53,8 @@ public class ConsumerGroupRbService extends AbstractTimerService {
 	private AuditLogService auditLogService;
 	// @Autowired
 	// private EmailUtil emailUtil;
-
+	@Autowired
+	private QueueService queueService;
 	@PostConstruct
 	private void init() {
 		super.init(Constants.RB, soaConfig.getRbCheckInterval(), soaConfig);
@@ -275,10 +265,14 @@ public class ConsumerGroupRbService extends AbstractTimerService {
 			int count = 0;
 			int size = consumerGroupQuqueVo.consumers.size();
 			StringBuilder sr = new StringBuilder();
+			Map<Long, QueueEntity> queueEntityMap= queueService.getAllQueueMap();
 			for (QueueOffsetEntity t1 : consumerGroupQuqueVo.queueOffsets) {
 				ConsumerGroupConsumerEntity t2 = consumerGroupQuqueVo.consumers.get(count);
 				t1.setConsumerId(t2.getConsumerId());
 				t1.setConsumerName(t2.getConsumerName());
+				if(t1.getOffset()<queueEntityMap.get(t1.getQueueId()).getMinId()){
+					t1.setOffset(queueEntityMap.get(t1.getQueueId()).getMinId());
+				}
 				count = (count + 1) % size;
 				sr.append(String.format("将queueOffsetId%s分配给消费者%s,", t1.getId(), t2.getConsumerName()));
 			}

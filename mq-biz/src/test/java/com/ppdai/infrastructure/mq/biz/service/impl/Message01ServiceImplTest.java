@@ -306,21 +306,4 @@ public class Message01ServiceImplTest extends AbstractTest {
 		assertEquals(true, rs);
 		verify(message01Repository).getListByTime(anyString(), anyString());
 	}
-
-	@Test
-	public void getNearByMessageByIdTest() {
-		message01ServiceImpl.getNearByMessageById("test", 1L);
-		verify(message01Repository).getNearByMessageById(anyString(), anyLong());
-
-		boolean rs = false;
-		doThrow(new RuntimeException("test")).when(message01Repository).getNearByMessageById(anyString(), anyLong());
-		try {
-			message01ServiceImpl.getNearByMessageById("test", 1L);
-		} catch (Exception e) {
-			rs = true;
-		}
-		assertEquals(true, rs);
-		verify(message01Repository).getNearByMessageById(anyString(), anyLong());
-	}
-	
 }

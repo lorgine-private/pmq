@@ -67,6 +67,7 @@ public class TruncateQueueService extends AbstractTimerService {
 							message01Service.setDbId(temp.getDbNodeId());
 							Long minId=message01Service.getTableMinId(temp.getTbName());
 							if(minId==null||minId==0){
+								message01Service.setDbId(temp.getDbNodeId());
 								queueService.truncate(temp);
 							}
 							log.info("truncate queue "+temp.getId()+","+temp.getDbName()+"-"+temp.getTbName());
