@@ -208,7 +208,7 @@ public class DbNodeServiceImpl extends AbstractBaseService<DbNodeEntity>
 			List<Filter> filters = new ArrayList<Filter>();
 			filters.add(new DruidConnectionFilter(DbUtil.getDbIp(dataSource.getUrl())));
 			dataSource.setProxyFilters(filters);
-			dataSource.init();
+			dataSource.getConnection();
 			dataSource = null;
 		}
 	}
@@ -227,7 +227,7 @@ public class DbNodeServiceImpl extends AbstractBaseService<DbNodeEntity>
 		List<Filter> filters = new ArrayList<Filter>();
 		filters.add(new DruidConnectionFilter(DbUtil.getDbIp(dataSource.getUrl())));
 		dataSource.setProxyFilters(filters);
-		dataSource.init();
+		dataSource.getConnection();
 		dataSource = null;
 	}
 
