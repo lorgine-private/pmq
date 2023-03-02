@@ -1,5 +1,7 @@
 package com.ppdai.infrastructure.mq.biz.service.impl;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -197,38 +199,13 @@ public class DbNodeServiceImpl extends AbstractBaseService<DbNodeEntity>
 	protected void checkSlave(DbNodeEntity dbNodeEntity) throws SQLException {
 		// 检查slave
 		if (hasSlave(dbNodeEntity)) {
-			DruidDataSource dataSource = dataSourceFactory.createDataSource();
-			dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-			dataSource.setUsername(dbNodeEntity.getDbUserNameBak());
-			dataSource.setPassword(dbNodeEntity.getDbPassBak());
-			dataSource.setUrl(getCon(dbNodeEntity, false));
-			dataSource.setInitialSize(1);
-			dataSource.setMinIdle(0);
-			dataSource.setMaxActive(1);
-			List<Filter> filters = new ArrayList<Filter>();
-			filters.add(new DruidConnectionFilter(DbUtil.getDbIp(dataSource.getUrl())));
-			dataSource.setProxyFilters(filters);
-			dataSource.getConnection();
-			dataSource = null;
+			testCon(getCon(dbNodeEntity, false),dbNodeEntity.getDbUserName(),dbNodeEntity.getDbPass());
+
 		}
 	}
 
 	private void checkMaster(DbNodeEntity dbNodeEntity) throws SQLException {
-		DruidDataSource dataSource = dataSourceFactory.createDataSource();
-
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUsername(dbNodeEntity.getDbUserName());
-		dataSource.setPassword(dbNodeEntity.getDbPass());
-		dataSource.setUrl(getCon(dbNodeEntity, true));
-		dataSource.setInitialSize(1);
-		dataSource.setMinIdle(0);
-		dataSource.setMaxActive(1);
-
-		List<Filter> filters = new ArrayList<Filter>();
-		filters.add(new DruidConnectionFilter(DbUtil.getDbIp(dataSource.getUrl())));
-		dataSource.setProxyFilters(filters);
-		dataSource.getConnection();
-		dataSource = null;
+		testCon(getCon(dbNodeEntity, true),dbNodeEntity.getDbUserName(),dbNodeEntity.getDbPass());
 	}
 
 	@Override
@@ -311,7 +288,17 @@ public class DbNodeServiceImpl extends AbstractBaseService<DbNodeEntity>
 			log.error("initDataSource_error", e);
 		}
 	}
-
+	private boolean testCon(String jdbcUrl,String userName,String password){
+		// 尝试建立连接
+		try {
+			Connection conn = DriverManager.getConnection(jdbcUrl, userName, password);
+			System.out.println("数据库连接成功！");
+			conn.close();
+			return true;
+		} catch (Throwable e) {
+			throw new RuntimeException(e);
+		}
+	}
 	String timeOutF = "&connectTimeout=%s&socketTimeout=%s";
 
 	private String getCon(DbNodeEntity t1, boolean isMaster) {
