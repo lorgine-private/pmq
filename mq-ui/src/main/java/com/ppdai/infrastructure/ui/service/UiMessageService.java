@@ -90,6 +90,7 @@ public class UiMessageService {
 			}
 			//条件筛选查询,不分页
 			else {
+				message01Service.setDbId(queueEntity.getDbNodeId());
 				parameterMap.put("tbName",message01Service.getDbName()+"."+queueEntity.getTbName());
 				parameterMap.put("bizId", messageGetListRequest.getBizId());
 				parameterMap.put("traceId", messageGetListRequest.getTraceId());
@@ -99,7 +100,6 @@ public class UiMessageService {
 				parameterMap.put("offset1",pageSize);
 				parameterMap.put("maxId",maxId);
 				parameterMap.put("minId",minId);
-				message01Service.setDbId(queueEntity.getDbNodeId());
 				message01EntityList = message01Service.getListByPage(parameterMap);
 
 				message01Service.setDbId(queueEntity.getDbNodeId());
@@ -108,6 +108,7 @@ public class UiMessageService {
 			}
 		}
 		else if(topicEntity.getTopicType()==2){
+			message01Service.setDbId(queueEntity.getDbNodeId());
 			//如果是失败topic，则根据正常分页逻辑查询
 			parameterMap.put("tbName",message01Service.getDbName()+"."+queueEntity.getTbName());
 			parameterMap.put("bizId", messageGetListRequest.getBizId());
@@ -122,7 +123,6 @@ public class UiMessageService {
 				parameterMap.put("retryStatus",Integer.parseInt(messageGetListRequest.getRetryStatus()));
 				parameterMap.put("failMsgRetryCountSuc",Message01Service.failMsgRetryCountSuc);
 			}
-			message01Service.setDbId(queueEntity.getDbNodeId());
 			message01EntityList = message01Service.getListByPage(parameterMap);
 
 			message01Service.setDbId(queueEntity.getDbNodeId());
